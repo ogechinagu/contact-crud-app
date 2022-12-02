@@ -1,11 +1,24 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import {toast} from 'react-toastify'
+
+import { FaUserEdit, FaUserTimes } from 'react-icons/fa';
 import '../styles/Home.css';
 
 const Home = () => {
+  const [data, setDate] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get('/db.json/users')
+    .then(response => {})
+  
+  }, [])
+  
+
   return (
     <div>
-      <Table striped responsive>
+      <table striped responsive>
         <thead>
           <tr>
             <th>Image</th>
@@ -14,6 +27,7 @@ const Home = () => {
             <th>Phone Number</th>
             <th>Address</th>
             <th>Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -24,9 +38,15 @@ const Home = () => {
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
+            <td>
+              <span className='d-flex'>
+                <FaUserEdit className='mx-2 icon-style edit-icon' />{' '}
+                <FaUserTimes className='mx-2 icon-style del-icon' />
+              </span>
+            </td>
           </tr>
         </tbody>
-      </Table>
+      </table>
     </div>
   );
 };

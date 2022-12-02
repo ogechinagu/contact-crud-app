@@ -1,0 +1,38 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  font-size: 12px;
+  padding: 20px 30px;
+}
+
+th {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.icon-style {
+  width: 20px;
+  height: auto;
+}
+
+.edit-icon {
+  color: #218838;
+}
+
+.del-icon {
+  color: #C82333;
+}
