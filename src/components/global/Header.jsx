@@ -7,14 +7,16 @@ import '../styles/Header.css';
 const Header = () => {
   const active = {
     borderBottom: '2px solid red',
-    backgroundColor: 'white',
+    backgroundColor: '#eee',
     padding: 'auto 20px',
   };
   return (
     <Navbar bg='light' expand='lg'>
       <Container fluid>
         <Navbar.Brand>
-          <NavLink to='/' className='nav-title-style'>Contact App</NavLink>
+          <NavLink to='/' className='nav-title-style'>
+            Contact App
+          </NavLink>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls='navbarScroll' />

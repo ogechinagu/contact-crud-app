@@ -4,10 +4,11 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #fafafa;
+  width: 100vw;
 }
 
 .app-container {
-  width: 75%;
+  width: 90vw;
   display: block;
   margin: 20px auto;
 }

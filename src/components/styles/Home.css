@@ -27,6 +27,7 @@ tr:nth-child(even) {
 .icon-style {
   width: 20px;
   height: auto;
+  cursor: pointer;
 }
 
 .edit-icon {
@@ -34,5 +35,5 @@ tr:nth-child(even) {
 }
 
 .del-icon {
-  color: #C82333;
+  color: #c82333;
 }
