@@ -12,3 +12,17 @@ body {
   display: block;
   margin: 20px auto;
 }
+
+.home-mobile {
+  display: none !important;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .home-web {
+    display: none !important;
+  }
+}

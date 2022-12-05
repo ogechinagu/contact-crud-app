@@ -1,10 +1,16 @@
+// import { useContext, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
+// import AppContext from '../context/AppContext';
 
 import '../styles/Header.css';
+import { useContext } from 'react';
+import AppContext from '../context/AppContext';
 
 const Header = () => {
+  const { setEditMode } = useContext(AppContext);
+
   const active = {
     borderBottom: '2px solid red',
     backgroundColor: '#eee',
@@ -31,6 +37,7 @@ const Header = () => {
               to='add'
               className='p-3 nav-link-style'
               style={({ isActive }) => (isActive ? active : undefined)}
+              onClick={() => setEditMode(false)}
             >
               Add Contact
             </NavLink>
@@ -47,6 +54,8 @@ const Header = () => {
                 placeholder='Search'
                 className='mx-2 nav-input-style'
                 aria-label='Search'
+                // value={query}
+                // onChange={onSearchbarChange}
               />
               <BsSearch />
             </div>
