@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AppProvider } from './components/context/AppContext';
+import { AppProvider } from './context/AppContext';
 import Header from './components/global/Header';
-import About from './components/pages/About';
-import AddContact from './components/pages/AddContact';
-import EditContact from './components/pages/EditContact';
-import Home from './components/pages/Home';
-import ViewContact from './components/pages/ViewContact';
+import About from './pages/About';
+import AddContact from './pages/AddContact';
+import EditContact from './pages/EditContact';
+import Home from './pages/Home';
+import ViewContact from './pages/ViewContact';
 
 function App() {
   return (

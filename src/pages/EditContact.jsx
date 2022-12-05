@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { baseURL } from '../../utils/api';
+import { baseURL } from '../utils/api';
 import { toast } from 'react-toastify';
 import { Form } from 'react-bootstrap';
 import AppContext from '../context/AppContext';

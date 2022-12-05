@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs';
 
 import '../styles/Header.css';
 import { useContext } from 'react';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 
 const Header = () => {
   const { setEditMode } = useContext(AppContext);
