@@ -1,15 +1,18 @@
-// import { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
-// import AppContext from '../context/AppContext';
-
-import '../../styles/Header.css';
-import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
+import '../../styles/Header.css';
+
 const Header = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const { setEditMode } = useContext(AppContext);
+
+  const handleSearch = async (e) => {
+    e.preventDefault()
+  };
 
   const active = {
     borderBottom: '2px solid red',
@@ -54,10 +57,10 @@ const Header = () => {
                 placeholder='Search'
                 className='mx-2 nav-input-style'
                 aria-label='Search'
-                // value={query}
-                // onChange={onSearchbarChange}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <BsSearch />
+              <BsSearch onClick={handleSearch} />
             </div>
           </Nav>
         </Navbar.Collapse>

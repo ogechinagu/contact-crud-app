@@ -62,7 +62,7 @@ export const AppProvider = ({ children }) => {
   // delete onclick
   const handleDeleteContact = async (id) => {
     if (window.confirm('Are you sure you want to delete this contact?')) {
-      await axios.delete(`${baseURL}${id}`);
+      await axios.delete(`${baseURL}/${id}`);
       toast.success('Contact deleted');
       setTimeout(() => loadData(), 500);
     }

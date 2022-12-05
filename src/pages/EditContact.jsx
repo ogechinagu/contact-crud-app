@@ -25,12 +25,12 @@ const EditContact = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${baseURL}${id}`).then((response) => {
+    axios.get(`${baseURL}/${id}`).then((response) => {
       setName(response.data.name);
       setEmail(response.data.email);
       setPhone(response.data.phone);
       setAddress(response.data.address);
-    });
+    }); // eslint-disable-next-line
   }, []);
 
   const handleEditContact = (e) => {
@@ -41,7 +41,7 @@ const EditContact = () => {
       phone: phone,
       address: address,
     };
-    axios.put(`${baseURL}${id}`, editContactPayload);
+    axios.put(`${baseURL}/${id}`, editContactPayload);
     toast.success('Contact updated');
     setTimeout(() => loadData(), 500);
     navigate('/');
