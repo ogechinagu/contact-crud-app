@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 // import AppContext from '../context/AppContext';
 
-import '../styles/Header.css';
+import '../../styles/Header.css';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
