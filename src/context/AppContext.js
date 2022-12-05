@@ -83,6 +83,25 @@ export const AppProvider = ({ children }) => {
     navigate(`edit/${id}`);
   };
 
+  //search
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    return await axios
+      .get(`${baseURL}?q=${searchQuery}`)
+      .then((response) => {
+        console.log(response);
+        setData(response.data);
+        setSearchQuery('');
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleResetData = () => {
+    loadData();
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -106,6 +125,10 @@ export const AppProvider = ({ children }) => {
         singleContact,
         handleViewContact,
         handleEditContact,
+        searchQuery,
+        setSearchQuery,
+        handleSearch,
+        handleResetData
       }}
     >
       {children}

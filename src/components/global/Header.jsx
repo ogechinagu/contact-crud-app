@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
@@ -7,12 +7,13 @@ import AppContext from '../../context/AppContext';
 import '../../styles/Header.css';
 
 const Header = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const { setEditMode } = useContext(AppContext);
-
-  const handleSearch = async (e) => {
-    e.preventDefault()
-  };
+  const {
+    setEditMode,
+    searchQuery,
+    setSearchQuery,
+    handleSearch,
+    handleResetData,
+  } = useContext(AppContext);
 
   const active = {
     borderBottom: '2px solid red',
@@ -23,7 +24,7 @@ const Header = () => {
     <Navbar bg='light' expand='lg'>
       <Container fluid>
         <Navbar.Brand>
-          <NavLink to='/' className='nav-title-style'>
+          <NavLink to='/' className='nav-title-style' onClick={handleResetData}>
             Contact App
           </NavLink>
         </Navbar.Brand>
