@@ -12,6 +12,7 @@ const AddContact = () => {
     setEmail,
     setPhone,
     setAddress,
+    setStatus,
     handleAddContact,
   } = useContext(AppContext);
 
@@ -74,14 +75,18 @@ const AddContact = () => {
                 <Form.Check
                   inline
                   label='Active'
-                  name='form-status'
+                  name='statusValue'
                   type='radio'
+                  value='Active'
+                  onChange={(e) => setStatus(e.target.value)}
                 />
                 <Form.Check
                   inline
                   label='Inactive'
-                  name='form-status'
+                  name='statusValue'
                   type='radio'
+                  value='Inactive'
+                  onChange={(e) => setStatus(e.target.value)}
                 />
               </div>
             </Form.Group>

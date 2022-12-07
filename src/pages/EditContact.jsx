@@ -14,10 +14,12 @@ const EditContact = () => {
     email,
     phone,
     address,
+    status,
     setName,
     setEmail,
     setPhone,
     setAddress,
+    setStatus,
     loadData,
   } = useContext(AppContext);
 
@@ -30,6 +32,7 @@ const EditContact = () => {
       setEmail(response.data.email);
       setPhone(response.data.phone);
       setAddress(response.data.address);
+      setStatus(response.data.status);
     }); // eslint-disable-next-line
   }, []);
 
@@ -40,10 +43,11 @@ const EditContact = () => {
       email: email,
       phone: phone,
       address: address,
+      status: status,
     };
     axios.put(`${baseURL}/${id}`, editContactPayload);
     toast.success('Contact updated');
-    setTimeout(() => loadData(), 500);
+    setTimeout(() => loadData(0, 4, 0), 500);
     navigate('/');
   };
 
@@ -108,12 +112,16 @@ const EditContact = () => {
                   label='Active'
                   name='form-status'
                   type='radio'
+                  value='Active'
+                  onChange={(e) => setStatus(e.target.value)}
                 />
                 <Form.Check
                   inline
                   label='Inactive'
                   name='form-status'
                   type='radio'
+                  value='Inactive'
+                  onChange={(e) => setStatus(e.target.value)}
                 />
               </div>
             </Form.Group>

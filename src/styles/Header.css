@@ -32,3 +32,20 @@
   font-size: 12px !important;
   color: #131313ac;
 }
+
+.sortby-nav {
+  margin: auto 20px;
+  font-size: 12px;
+}
+
+.sortby-btn {
+  
+  background: #218838;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  font-size: 12px;
+  padding: 6px 15px;
+  margin-left: 10px;
+  text-decoration: none;
+}

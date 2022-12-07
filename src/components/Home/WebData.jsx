@@ -1,19 +1,25 @@
 import { useContext } from 'react';
-
+import AppContext from '../../context/AppContext';
+// import Pagination from 'react-bootstrap/Pagination';
 import { FaUserEdit, FaUserTimes } from 'react-icons/fa';
 import { FiMoreHorizontal } from 'react-icons/fi';
-import AppContext from '../../context/AppContext';
+
+import AppPagination from '../global/Pagination';
 
 const WebData = () => {
   const {
     data,
     loading,
+    // loadData,
     handleDeleteContact,
     handleViewContact,
     handleEditContact,
+    searchQuery,
+    // currentPage,
+    // setCurrentPage,
+    // pageLimit,
+    // setPageLimit,
   } = useContext(AppContext);
-
-
 
   return (
     <>
@@ -33,8 +39,10 @@ const WebData = () => {
           {loading && data.length === 0 ? (
             <tr>
               <td>
-                <h6 style={{ width: '200px', margin: '10px auto' }}>
-                  Fetching data...
+                <h6 style={{ width: '100%', margin: '10px auto' }}>
+                  {loading & searchQuery.length > 0
+                    ? 'oops... no data found'
+                    : 'Fetching data...'}
                 </h6>
               </td>
             </tr>
@@ -77,6 +85,7 @@ const WebData = () => {
           )}
         </tbody>
       </table>
+      <AppPagination />
     </>
   );
 };
